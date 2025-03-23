@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Shop - Water Cannon Fountains</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+     rel="stylesheet"
+   />
+   <link
+     href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+     rel="stylesheet"
+   />
+   <script>
+     tailwind.config = {
+       theme: {
+         extend: {
+           colors: {
+             primary: "#1E3D59",
+             secondary: "#5BC0EB",
+           },
+           borderRadius: {
+             none: "0px",
+             sm: "4px",
+             DEFAULT: "8px",
+             md: "12px",
+             lg: "16px",
+             xl: "20px",
+             "2xl": "24px",
+             "3xl": "32px",
+             full: "9999px",
+             button: "8px",
+           },
+         },
+       },
+     };
+   </script>
+   <style>
+     :where([class^="ri-"])::before { content: "\f3c2"; }
+     .product-card:hover .quick-view {
+     opacity: 1;
+     transform: translateY(0);
+     }
+     .quick-view {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: all 0.3s ease;
+     }
+     .nav-item {
+     position: relative;
+     }
+     .nav-item::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     bottom: -2px;
+     left: 0;
+     background-color: #5BC0EB;
+     transform: scaleX(0);
+     transition: transform 0.3s ease;
+     }
+     .nav-item:hover::after {
+     transform: scaleX(1);
+     }
+   </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen">
+   <header class="fixed w-full z-50 bg-white shadow-lg">
+     <nav
+       class="container mx-auto px-6 py-4 flex items-center justify-between"
+     >
+       <div class="flex items-center space-x-16">
+         <a href="#" class="text-3xl font-['Pacifico'] text-primary"
+           >Water Cannon</a
+         >
+         <div class="hidden lg:flex items-center space-x-8">
+           <a
+             href="https://readdy.ai/home/38510ec5-32fa-4989-aa52-fcf2d22fee4e/31598fe1-1421-4efc-8103-28cbf51b5dbc"
+             data-readdy="true"
+             class="nav-item text-primary hover:text-secondary transition-colors"
+             >Home</a
+           >
+           <a href="#" class="nav-item text-secondary font-semibold">Shop</a>
+           <a
+             href="#"
+             class="nav-item text-primary hover:text-secondary transition-colors"
+             >About Us</a
+           >
+           <a
+             href="#"
+             class="nav-item text-primary hover:text-secondary transition-colors"
+             >Installation Guide</a
+           >
+           <a
+             href="#"
+             class="nav-item text-primary hover:text-secondary transition-colors"
+             >Reviews</a
+           >
+           <a
+             href="#"
+             class="nav-item text-primary hover:text-secondary transition-colors"
+             >Contact</a
+           >
+         </div>
+       </div>
+       <div class="flex items-center space-x-6">
+         <div class="relative">
+           <input
+             type="text"
+             placeholder="Search products..."
+             class="pl-10 pr-4 py-2 rounded-button border border-gray-200 focus:outline-none focus:border-secondary text-sm"
+           />
+           <i
+             class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+           ></i>
+         </div>
+         <div class="relative" id="cartContainer">
+           <button
+             class="w-10 h-10 flex items-center justify-center text-primary hover:text-secondary transition-colors"
+             id="cartButton"
+           >
+             <i class="ri-shopping-cart-line text-xl"></i>
+           </button>
+           <span
+             class="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center bg-secondary text-white text-xs rounded-full"
+             >3</span
+           >
+           <div
+             id="cartDropdown"
+             class="hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-xl z-50"
+           >
+             <div class="p-4">
+               <div class="space-y-4 max-h-96 overflow-y-auto">
+                 <div class="flex items-center space-x-4">
+                   <img
+                     src="https://public.readdy.ai/ai/img_res/0fa102d66b1bb411e26ff92d8cab9d63.jpg"
+                     class="w-16 h-16 object-cover rounded"
+                     alt="Geometric Cascade"
+                   />
+                   <div class="flex-1">
+                     <h4 class="text-primary font-semibold">
+                       Geometric Cascade
+                     </h4>
+                     <div class="flex items-center justify-between mt-1">
+                       <span class="text-gray-600">$1,299 x 1</span>
+                       <button class="text-red-500 hover:text-red-600">
+                         <i class="ri-delete-bin-line"></i>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="flex items-center space-x-4">
+                   <img
+                     src="https://public.readdy.ai/ai/img_res/5d3943c0a981877de18fa99e0f24c407.jpg"
+                     class="w-16 h-16 object-cover rounded"
+                     alt="Zen Harmony"
+                   />
+                   <div class="flex-1">
+                     <h4 class="text-primary font-semibold">Zen Harmony</h4>
+                     <div class="flex items-center justify-between mt-1">
+                       <span class="text-gray-600">$1,899 x 1</span>
+                       <button class="text-red-500 hover:text-red-600">
+                         <i class="ri-delete-bin-line"></i>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="flex items-center space-x-4">
+                   <img
+                     src="https://public.readdy.ai/ai/img_res/7ef41b6b437b7b4fac1bfb41b25aa968.jpg"
+                     class="w-16 h-16 object-cover rounded"
+                     alt="Wall Cascade"
+                   />
+                   <div class="flex-1">
+                     <h4 class="text-primary font-semibold">Wall Cascade</h4>
+                     <div class="flex items-center justify-between mt-1">
+                       <span class="text-gray-600">$999 x 1</span>
+                       <button class="text-red-500 hover:text-red-600">
+                         <i class="ri-delete-bin-line"></i>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="border-t border-gray-100 mt-4 pt-4">
+                 <div class="flex items-center justify-between mb-4">
+                   <span class="text-gray-600">Total:</span>
+                   <span class="text-primary font-semibold text-lg"
+                     >$4,197</span
+                   >
+                 </div>
+                 <div class="flex space-x-4">
+                   <a
+                     href="https://readdy.ai/home/38510ec5-32fa-4989-aa52-fcf2d22fee4e/080d54f6-5dae-41af-9786-b36594111a4e"
+                     data-readdy="true"
+                     class="flex-1"
+                   >
+                     <button
+                       class="w-full px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white rounded-button transition-colors whitespace-nowrap"
+                     >
+                       View Cart
+                     </button>
+                   </a>
+                   <button
+                     class="flex-1 px-4 py-2 bg-secondary text-white hover:bg-secondary/90 rounded-button whitespace-nowrap"
+                   >
+                     Checkout
+                   </button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </nav>
+   </header>
+   <main class="pt-24 pb-20">
+     <div class="container mx-auto px-6">
+       <div class="flex items-center justify-end mb-8">
+         <div class="flex items-center space-x-4">
+           <button
+             id="gridView"
+             class="w-10 h-10 flex items-center justify-center rounded-button bg-secondary text-white"
+           >
+             <i class="ri-grid-line"></i>
+           </button>
+           <button
+             id="listView"
+             class="w-10 h-10 flex items-center justify-center rounded-button border border-gray-200 text-gray-600 hover:border-secondary hover:text-secondary"
+           >
+             <i class="ri-list-check"></i>
+           </button>
+         </div>
+       </div>
+       <div
+         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+         id="productGrid"
+       >
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/509210426ec50fcc3a3c8a3fe9f8c533.jpg"
+               class="w-full h-full object-cover"
+               alt="Modern Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">
+                 Geometric Cascade
+               </h3>
+               <span class="text-2xl font-bold text-primary">$1,299</span>
+             </div>
+             <p class="text-gray-600 mb-4">Modern Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>36" x 36" x 72"</span>
+               <span>Stainless Steel</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/7ccbb0ad38809dc48ecf568bc18adfed.jpg"
+               class="w-full h-full object-cover"
+               alt="Classic Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">
+                 Renaissance Glory
+               </h3>
+               <span class="text-2xl font-bold text-primary">$2,499</span>
+             </div>
+             <p class="text-gray-600 mb-4">Classic Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>48" x 48" x 96"</span>
+               <span>Cast Stone</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/ed3600601e2a3acb87852c184a4c8332.jpg"
+               class="w-full h-full object-cover"
+               alt="Zen Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">Zen Harmony</h3>
+               <span class="text-2xl font-bold text-primary">$1,899</span>
+             </div>
+             <p class="text-gray-600 mb-4">Zen Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>42" x 24" x 36"</span>
+               <span>Natural Stone</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/4f2608f5214e4cc0302df7b45a738c01.jpg"
+               class="w-full h-full object-cover"
+               alt="Wall Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">Wall Cascade</h3>
+               <span class="text-2xl font-bold text-primary">$999</span>
+             </div>
+             <p class="text-gray-600 mb-4">Modern Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>48" x 6" x 24"</span>
+               <span>Copper & Glass</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/17636ef904d751e5b749fc33956e9bce.jpg"
+               class="w-full h-full object-cover"
+               alt="Sphere Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">
+                 Sphere Serenity
+               </h3>
+               <span class="text-2xl font-bold text-primary">$1,599</span>
+             </div>
+             <p class="text-gray-600 mb-4">Modern Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>36" x 36" x 36"</span>
+               <span>Stainless Steel</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+         <div
+           class="product-card bg-white rounded-lg shadow-lg overflow-hidden"
+         >
+           <div class="relative h-80">
+             <img
+               src="https://public.readdy.ai/ai/img_res/61754effb7008c9303ef49d700ba3683.jpg"
+               class="w-full h-full object-cover"
+               alt="Traditional Fountain"
+             />
+             <div
+               class="quick-view absolute inset-0 bg-black/50 flex items-center justify-center"
+             >
+               <button
+                 class="bg-white text-primary px-6 py-2 rounded-button hover:bg-secondary hover:text-white transition-colors"
+               >
+                 Quick View
+               </button>
+             </div>
+           </div>
+           <div class="p-6">
+             <div class="flex items-center justify-between mb-2">
+               <h3 class="text-xl font-semibold text-primary">
+                 Cherub's Dance
+               </h3>
+               <span class="text-2xl font-bold text-primary">$2,999</span>
+             </div>
+             <p class="text-gray-600 mb-4">Classic Collection</p>
+             <div
+               class="flex items-center justify-between text-sm text-gray-500 mb-4"
+             >
+               <span>60" x 60" x 108"</span>
+               <span>Cast Stone</span>
+             </div>
+             <button
+               class="w-full bg-secondary hover:bg-secondary/90 text-white py-2 rounded-button"
+             >
+               Add to Cart
+             </button>
+           </div>
+         </div>
+       </div>
+       <div class="flex items-center justify-between mt-12">
+         <div class="flex items-center space-x-2">
+           <span class="text-gray-600">Show:</span>
+           <select
+             class="px-2 py-1 rounded-button border border-gray-200 text-gray-600 pr-8"
+           >
+             <option>12</option>
+             <option>24</option>
+             <option>36</option>
+           </select>
+           <span class="text-gray-600">per page</span>
+         </div>
+         <div class="flex items-center space-x-2">
+           <button
+             class="w-10 h-10 flex items-center justify-center rounded-button border border-gray-200 text-gray-600 hover:border-secondary hover:text-secondary"
+           >
+             <i class="ri-arrow-left-s-line"></i>
+           </button>
+           <button
+             class="w-10 h-10 flex items-center justify-center rounded-button bg-secondary text-white"
+           >
+             1
+           </button>
+           <button
+             class="w-10 h-10 flex items-center justify-center rounded-button border border-gray-200 text-gray-600 hover:border-secondary hover:text-secondary"
+           >
+             2
+           </button>
+           <button
+             class="w-10 h-10 flex items-center justify-center rounded-button border border-gray-200 text-gray-600 hover:border-secondary hover:text-secondary"
+           >
+             3
+           </button>
+           <button
+             class="w-10 h-10 flex items-center justify-center rounded-button border border-gray-200 text-gray-600 hover:border-secondary hover:text-secondary"
+           >
+             <i class="ri-arrow-right-s-line"></i>
+           </button>
+         </div>
+       </div>
+     </div>
+   </main>
+   <footer class="bg-primary text-white py-12">
+     <div class="container mx-auto px-6">
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+         <div>
+           <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+           <div class="space-y-2">
+             <p>1234 Water Way</p>
+             <p>Fountain City, FC 12345</p>
+             <p>Phone: (555) 123-4567</p>
+             <p>Email: info@watercannon.com</p>
+           </div>
+         </div>
+         <div>
+           <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+           <ul class="space-y-2">
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >About Us</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Shop</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Installation Guide</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Contact</a
+               >
+             </li>
+           </ul>
+         </div>
+         <div>
+           <h3 class="text-xl font-semibold mb-4">Customer Service</h3>
+           <ul class="space-y-2">
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Shipping Information</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Returns & Exchanges</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >FAQ</a
+               >
+             </li>
+             <li>
+               <a href="#" class="hover:text-secondary transition-colors"
+                 >Warranty</a
+               >
+             </li>
+           </ul>
+         </div>
+         <div>
+           <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+           <p class="mb-4">Subscribe to receive updates and special offers</p>
+           <form class="flex">
+             <input
+               type="email"
+               placeholder="Enter your email"
+               class="flex-1 px-4 py-2 rounded-l-button focus:outline-none text-gray-900"
+             />
+             <button
+               type="submit"
+               class="bg-secondary hover:bg-secondary/90 px-6 py-2 rounded-r-button"
+             >
+               Subscribe
+             </button>
+           </form>
+         </div>
+       </div>
+       <div class="border-t border-white/20 mt-12 pt-8 text-center">
+         <p>&copy; 2025 Water Cannon Fountains. All rights reserved.</p>
+       </div>
+     </div>
+   </footer>
+   <script>
+     document.addEventListener("DOMContentLoaded", function () {
+       const gridViewBtn = document.getElementById("gridView");
+       const listViewBtn = document.getElementById("listView");
+       const productGrid = document.getElementById("productGrid");
+       const cartButton = document.getElementById("cartButton");
+       const cartDropdown = document.getElementById("cartDropdown");
+       const cartContainer = document.getElementById("cartContainer");
+       let isCartOpen = false;
+       cartButton.addEventListener("click", (e) => {
+         e.stopPropagation();
+         isCartOpen = !isCartOpen;
+         cartDropdown.classList.toggle("hidden");
+       });
+       document.addEventListener("click", (e) => {
+         if (!cartContainer.contains(e.target) && !cartDropdown.contains(e.target)) {
+           isCartOpen = false;
+           cartDropdown.classList.add("hidden");
+         }
+       });
+       cartDropdown.addEventListener("click", (e) => {
+         e.stopPropagation();
+       });
+       gridViewBtn.addEventListener("click", () => {
+         productGrid.classList.remove("grid-cols-1");
+         productGrid.classList.add("md:grid-cols-2", "lg:grid-cols-3");
+         gridViewBtn.classList.add("bg-secondary", "text-white");
+         gridViewBtn.classList.remove("border", "border-gray-200", "text-gray-600");
+         listViewBtn.classList.remove("bg-secondary", "text-white");
+         listViewBtn.classList.add("border", "border-gray-200", "text-gray-600");
+       });
+       listViewBtn.addEventListener("click", () => {
+         productGrid.classList.add("grid-cols-1");
+         productGrid.classList.remove("md:grid-cols-2", "lg:grid-cols-3");
+         listViewBtn.classList.add("bg-secondary", "text-white");
+         listViewBtn.classList.remove("border", "border-gray-200", "text-gray-600");
+         gridViewBtn.classList.remove("bg-secondary", "text-white");
+         gridViewBtn.classList.add("border", "border-gray-200", "text-gray-600");
+       });
+     });
+   </script>
+ </body>
+</html>
+
+
+
+
+
+
